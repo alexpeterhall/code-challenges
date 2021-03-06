@@ -1,4 +1,5 @@
-'use strict'
+'use strict';
+
 function countingValleys(hike) {
   // Tracks current elevation above or below sea level (0).
   let elevation = 0;
@@ -11,10 +12,10 @@ function countingValleys(hike) {
     // If the hiker has proceeded down below sea level set `inValley` to `true`.
     if (elevation < 0) inValley = true;
     // If current `step` is up ("U") increment the elevation, else if it is down ("D") deincrement the elevation.
-    if (step === "U") elevation++;
-    else if (step === "D") elevation--;
+    if (step === 'U') elevation++;
+    else if (step === 'D') elevation--;
     // If the hiker is currently in a valley and has returned to sea level on this step then they have traversed a valley. Increment the `traversed` variable and reset the `inValley` variable to `false`.
-    if (inValley === true && elevation ===0) {
+    if (inValley === true && elevation === 0) {
       traversed++;
       inValley = false;
     }
@@ -23,5 +24,6 @@ function countingValleys(hike) {
   return traversed;
 }
 
-console.log(countingValleys("DDUUDDUDUUUD")); // Output 2
-console.log(countingValleys("UDUUDDDUDUDUDDUU")); // Output 4
+module.exports = {
+  countingValleys: countingValleys,
+};

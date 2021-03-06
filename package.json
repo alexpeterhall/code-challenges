@@ -1,0 +1,25 @@
+{
+  "name": "code-challenges",
+  "version": "1.0.0",
+  "description": "A random assortment of code challenges or word problems that I've worked on.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aroxx/code-challenges.git"
+  },
+  "author": "Alex Hall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aroxx/code-challenges/issues"
+  },
+  "homepage": "https://github.com/aroxx/code-challenges#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  },
+  "jest": {
+    "verbose": true
+  }
+}
