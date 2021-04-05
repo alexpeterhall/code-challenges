@@ -24,6 +24,4 @@ function countingValleys(hike) {
   return traversed;
 }
 
-module.exports = {
-  countingValleys: countingValleys,
-};
+module.exports = { countingValleys };

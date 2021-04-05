@@ -23,6 +23,4 @@ function translatePigLatin(str) {
   }
 }
 
-module.exports = {
-  translatePigLatin: translatePigLatin,
-};
+module.exports = { translatePigLatin };

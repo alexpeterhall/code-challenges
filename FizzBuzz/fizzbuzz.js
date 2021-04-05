@@ -24,6 +24,4 @@ function fizzbuzz() {
 
 //fizzbuzz();
 
-module.exports = {
-  fizzbuzz: fizzbuzz,
-};
+module.exports = { fizzbuzz };

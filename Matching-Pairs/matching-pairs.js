@@ -26,6 +26,4 @@ function matchPairs(widgets) {
   return pairs;
 }
 
-module.exports = {
-  matchPairs: matchPairs,
-};
+module.exports = { matchPairs };
