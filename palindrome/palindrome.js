@@ -1,3 +1,5 @@
+'use strict';
+
 function isPalindrome(str) {
   let result = true;
   // Clean up the input string. Only include lowercase alphanumeric characters. match() returns an array.
