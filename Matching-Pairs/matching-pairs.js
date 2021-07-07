@@ -1,29 +1,32 @@
 'use strict';
 
 function matchPairs(widgets) {
-  // Tracks total number of matched pairs for our final result.
-  let pairs = 0;
-  // Use the array.reduce() method to find only the unique values in the widgets array and return a new array with those unique values and assign it to the `uniqueColors` variable.
-  const uniqueColors = widgets.reduce((colors, el) => {
-    // If the current element IS NOT in our temporary "colors" accumulator, add it.
-    if (colors.indexOf(el) === -1) {
-      colors.push(el);
+  if (!Array.isArray(widgets)) return 'Invalid input. Expected an array.';
+
+  let matchedPairs = 0;
+
+  const uniqueWidgetColors = widgets.reduce((uniqueColors, element) => {
+    const cleanedElement = cleaned(element);
+    if (uniqueColors.indexOf(cleanedElement) === -1) {
+      uniqueColors.push(cleanedElement);
     }
-    return colors;
+    return uniqueColors;
   }, []);
-  // For each of our unique color identifiers loop through the full argument array `widgets` and determine how many widgets match that color.
-  for (const color of uniqueColors) {
+
+  uniqueWidgetColors.forEach((color) => {
     let matches = 0;
-    for (let i = 0; i < widgets.length; i++) {
-      if (widgets[i] === color) {
+    for (const widget of widgets) {
+      if (cleaned(widget) === color) {
         matches++;
       }
     }
-    // Divide all matches by 2 to see how many pairs there are. Round down to eliminate any odd matches that can't be paired. Add the number of pairs to our `pairs` variable for our final result.
-    pairs += Math.floor(matches / 2);
-  }
-  // Return the final number of pairs.
-  return pairs;
+    matchedPairs += Math.floor(matches / 2);
+  });
+  return matchedPairs;
+}
+
+function cleaned(element) {
+  return typeof element === 'string' ? element.toLowerCase() : Math.floor(element);
 }
 
 module.exports = { matchPairs };
