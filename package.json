@@ -1,7 +1,7 @@
 {
   "name": "code-challenges",
   "version": "1.0.0",
-  "description": "A random assortment of code challenges or word problems that I've worked on.",
+  "description": "Solutions to various code challenges that I've worked on and found interesting.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
