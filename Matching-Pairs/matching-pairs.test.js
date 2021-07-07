@@ -7,18 +7,19 @@ describe('Matching Pairs Test Suite', () => {
   });
   test('Should return 4 matching pairs', () => {
     expect(
-      match.matchPairs([
-        'White',
-        'White',
-        'Black',
-        'Black',
-        'Black',
-        'Black',
-        'White',
-        'Orange',
-        'Orange',
-        'Orange',
-      ])
+      match.matchPairs(['White', 'White', 'Black', 'Black', 'Black', 'Black', 'White', 'Orange', 'Orange', 'Orange'])
     ).toBe(4);
+  });
+  test('Should return 5 matching pairs', () => {
+    expect(match.matchPairs([1, 2, 3, 'Four', 'Five', 'five', 'four', 3.8, 2.3, 1.111])).toBe(5);
+  });
+  test('Should return validation error for String input', () => {
+    expect(match.matchPairs('This is an invalid String input')).toBe('Invalid input. Expected an array.');
+  });
+  test('Should return validation error for Number input', () => {
+    expect(match.matchPairs(1, 2, 3, 4, 5)).toBe('Invalid input. Expected an array.');
+  });
+  test('Should return validation error for Object input', () => {
+    expect(match.matchPairs({ key: 'value' })).toBe('Invalid input. Expected an array.');
   });
 });
