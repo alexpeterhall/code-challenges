@@ -1,26 +1,28 @@
 'use strict';
 
-function translatePigLatin(str) {
+function translateToPigLatin(word) {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
-  let position = null;
-  for (let letter of vowels) {
-    if (str.includes(letter)) {
-      if (position === 0) {
+  let positionOfFirstVowel = null;
+
+  for (const currentVowel of vowels) {
+    if (word.includes(currentVowel)) {
+      if (positionOfFirstVowel === 0) {
         break;
-      } else if (position === null || position > str.indexOf(letter)) {
-        position = str.indexOf(letter);
+      } else if (positionOfFirstVowel === null || word.indexOf(currentVowel) < positionOfFirstVowel) {
+        positionOfFirstVowel = word.indexOf(currentVowel);
       }
     }
   }
-  if (position === null) {
-    return str.concat('ay');
-  } else if (position === 0) {
-    return str.concat('way');
+
+  if (positionOfFirstVowel === null) {
+    return word.concat('ay');
+  } else if (positionOfFirstVowel === 0) {
+    return word.concat('way');
   } else {
-    let first = str.slice(0, position);
-    let rest = str.slice(position);
+    let first = word.slice(0, positionOfFirstVowel);
+    let rest = word.slice(positionOfFirstVowel);
     return rest.concat(first, 'ay');
   }
 }
 
-module.exports = { translatePigLatin };
+module.exports = { translateToPigLatin };
