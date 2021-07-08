@@ -5,7 +5,24 @@
  * @return {number[]}
  */
 
-const plusOne = function (numbers) {
+function incrementByOneCleverOneLiner(numbers) {
+  return (parseInt(numbers.join('')) + 1)
+    .toString()
+    .split('')
+    .map((el) => parseInt(el));
+}
+
+function incrementByOneReadable(numbers) {
+  let number = parseInt(numbers.join(''));
+  number += 1;
+  number.toString().split('');
+  const result = number.map((element) => {
+    return parseInt(element);
+  });
+  return result;
+}
+
+function incrementByOneCrazy(numbers) {
   let numberOfTrailingNines = 0;
   const result = [];
 
@@ -21,7 +38,7 @@ const plusOne = function (numbers) {
     result.push(numbers[0] + 1);
   } else if (numberOfTrailingNines === numbers.length) {
     result.push(1);
-    for (let i = 0; i < numberOfTrailingNines; i++) {
+    for (let i = 0; i < numbers.length; i++) {
       result.push(0);
     }
   } else if (numberOfTrailingNines > 0 && numberOfTrailingNines < numbers.length) {
@@ -35,6 +52,6 @@ const plusOne = function (numbers) {
     result[result.length - 1] += 1;
   }
   return result;
-};
+}
 
-module.exports = { plusOne };
+module.exports = { incrementByOneCrazy, incrementByOneReadable, incrementByOneCleverOneLiner };

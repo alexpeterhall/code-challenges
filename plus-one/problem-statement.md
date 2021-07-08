@@ -10,4 +10,9 @@ You may assume the integer does not contain any leading zero, except the number 
 
 ## Notes
 
-This was a fun one. It seems like a 5 second solution until you remember those pesky 9s.
+My original solution is ridiculous and a good example of:
+
+1. Diving into coding a solution before taking time to think through the problem.
+2. Doing too many "Leetcode" style coding problems and starting to look at every solution as a convoluted array manipulation. You know what they say about someone who's only tool is a hammer...
+
+I split the better solution out into the hard-to-read one-liner chaining everything together and also a more readable and verbose function implementing the same methods.
