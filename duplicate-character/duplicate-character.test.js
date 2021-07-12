@@ -1,62 +1,62 @@
 'use strict';
-const dupe = require('./duplicate-character.js');
+const { checkDuplicate, checkMultipleDuplicates } = require('./duplicate-character.js');
 
 describe('Duplicate Character Test Suite', () => {
   test('Should return the letter "t" for "test"', () => {
-    expect(dupe.checkDuplicate('test')).toBe('t');
+    expect(checkDuplicate('test')).toBe('t');
   });
   test('Should return the letter "w" for "Wow"', () => {
-    expect(dupe.checkDuplicate('Wow')).toBe('w');
+    expect(checkDuplicate('Wow')).toBe('w');
   });
   test('Should return the letter "a" for "JavaScript"', () => {
-    expect(dupe.checkDuplicate('JavaScript')).toBe('a');
+    expect(checkDuplicate('JavaScript')).toBe('a');
   });
   test('Should return the letter "l" for "I love LAMP!"', () => {
-    expect(dupe.checkDuplicate('I love LAMP!')).toBe('l');
+    expect(checkDuplicate('I love LAMP!')).toBe('l');
   });
   test('Should return the letter "i" for "Codility"', () => {
-    expect(dupe.checkDuplicate('Codility')).toBe('i');
+    expect(checkDuplicate('Codility')).toBe('i');
   });
   test('Should return the letter "m" for "1m3Q&$^Q*&$1askdjf24719824M"', () => {
-    expect(dupe.checkDuplicate('1m3Q&$^Q*&$1askdjf24719824M')).toBe('m');
+    expect(checkDuplicate('1m3Q&$^Q*&$1askdjf24719824M')).toBe('m');
   });
   test('Should return "a" for "asdfqwerzxcvuiophjklavbnm"', () => {
-    expect(dupe.checkDuplicate('asdfqwerzxcvuiophjklavbnm')).toBe('a');
+    expect(checkDuplicate('asdfqwerzxcvuiophjklavbnm')).toBe('a');
   });
   test('Should return "a" for "abcdabcd"', () => {
-    expect(dupe.checkDuplicate('abcdabcd')).toBe('a');
+    expect(checkDuplicate('abcdabcd')).toBe('a');
   });
   test('Should return "No match found" for "abcdefghijklmnopqrstuvwxyz"', () => {
-    expect(dupe.checkDuplicate('abcdefghijklmnopqrstuvwxyz')).toBe('No match found');
+    expect(checkDuplicate('abcdefghijklmnopqrstuvwxyz')).toBe('No match found');
   });
   test('Should return "Invalid input. No letters found to try matching." for "a"', () => {
-    expect(dupe.checkDuplicate('a')).toBe('Invalid input. No letters found to try matching.');
+    expect(checkDuplicate('a')).toBe('Invalid input. No letters found to try matching.');
   });
   test('Should return "Invalid input. No letters found to try matching." for "123456789"', () => {
-    expect(dupe.checkDuplicate('123456789')).toBe('Invalid input. No letters found to try matching.');
+    expect(checkDuplicate('123456789')).toBe('Invalid input. No letters found to try matching.');
   });
   test('Should return "Invalid input. No letters found to try matching." for "5718235728(*&%^$%$%^$^("', () => {
-    expect(dupe.checkDuplicate('5718235728(*&%^$%$%^$^(')).toBe('Invalid input. No letters found to try matching.');
+    expect(checkDuplicate('5718235728(*&%^$%$%^$^(')).toBe('Invalid input. No letters found to try matching.');
   });
 });
 
 describe('Multiple Duplicate Character Test Suite', () => {
   test('Should return matching array for "tests"', () => {
-    expect(dupe.checkMultipleDuplicates('tests')).toStrictEqual(['t', 's']);
+    expect(checkMultipleDuplicates('tests')).toStrictEqual(['t', 's']);
   });
   test('Should return matching array for "abcdabcd"', () => {
-    expect(dupe.checkMultipleDuplicates('abcdabcd')).toStrictEqual(['a', 'b', 'c', 'd']);
+    expect(checkMultipleDuplicates('abcdabcd')).toStrictEqual(['a', 'b', 'c', 'd']);
   });
   test('Should return matching array for "aabcdefghhijklmnoppqrstuvwxyz"', () => {
-    expect(dupe.checkMultipleDuplicates('aabcdefghhijklmnoppqrstuvwxyz')).toStrictEqual(['a', 'h', 'p']);
+    expect(checkMultipleDuplicates('aabcdefghhijklmnoppqrstuvwxyz')).toStrictEqual(['a', 'h', 'p']);
   });
   test('Should return matching array for "a"', () => {
-    expect(dupe.checkMultipleDuplicates('a')).toBe('Invalid input. No letters found to try matching.');
+    expect(checkMultipleDuplicates('a')).toBe('Invalid input. No letters found to try matching.');
   });
   test('Should return matching array for "0123456789"', () => {
-    expect(dupe.checkMultipleDuplicates('0123456789')).toBe('Invalid input. No letters found to try matching.');
+    expect(checkMultipleDuplicates('0123456789')).toBe('Invalid input. No letters found to try matching.');
   });
   test('Should return matching array for "#%@*%^!#%!))#*_"', () => {
-    expect(dupe.checkMultipleDuplicates('#%@*%^!#%!))#*_')).toBe('Invalid input. No letters found to try matching.');
+    expect(checkMultipleDuplicates('#%@*%^!#%!))#*_')).toBe('Invalid input. No letters found to try matching.');
   });
 });

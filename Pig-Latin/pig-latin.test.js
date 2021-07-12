@@ -1,29 +1,29 @@
 'use strict';
-const validate = require('./pig-latin');
+const { translateToPigLatin } = require('./pig-latin');
 
 describe('Pig Latin Test Suite', () => {
   test('"california" should return the string "aliforniacay"', () => {
-    expect(validate.translateToPigLatin('california')).toBe('aliforniacay');
+    expect(translateToPigLatin('california')).toBe('aliforniacay');
   });
   test('"paragraphs" should return the string "aragraphspay"', () => {
-    expect(validate.translateToPigLatin('paragraphs')).toBe('aragraphspay');
+    expect(translateToPigLatin('paragraphs')).toBe('aragraphspay');
   });
   test('"glove" should return the string "oveglay"', () => {
-    expect(validate.translateToPigLatin('glove')).toBe('oveglay');
+    expect(translateToPigLatin('glove')).toBe('oveglay');
   });
   test('"algorithm" should return the string "algorithmway"', () => {
-    expect(validate.translateToPigLatin('algorithm')).toBe('algorithmway');
+    expect(translateToPigLatin('algorithm')).toBe('algorithmway');
   });
   test('"eight" should return the string "eightway"', () => {
-    expect(validate.translateToPigLatin('eight')).toBe('eightway');
+    expect(translateToPigLatin('eight')).toBe('eightway');
   });
   test('"schwartz" should return the string "artzschway"', () => {
-    expect(validate.translateToPigLatin('schwartz')).toBe('artzschway');
+    expect(translateToPigLatin('schwartz')).toBe('artzschway');
   });
   test('"rhythm" should return the string "rhythmay"', () => {
-    expect(validate.translateToPigLatin('rhythm')).toBe('rhythmay');
+    expect(translateToPigLatin('rhythm')).toBe('rhythmay');
   });
   test('"consonant" should return the string "onsonantcay"', () => {
-    expect(validate.translateToPigLatin('consonant')).toBe('onsonantcay');
+    expect(translateToPigLatin('consonant')).toBe('onsonantcay');
   });
 });

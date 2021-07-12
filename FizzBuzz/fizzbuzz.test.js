@@ -1,9 +1,9 @@
 'use strict';
-const fb = require('./fizzbuzz');
+const { fizzbuzz } = require('./fizzbuzz');
 
 describe('FizzBuzz Test Suite', () => {
   test('FizzBuzz output from 1 through 100 should match', () => {
-    expect(fb.fizzbuzz()).toStrictEqual([
+    expect(fizzbuzz()).toStrictEqual([
       1,
       2,
       'Fizz',
