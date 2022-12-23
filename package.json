@@ -1,5 +1,7 @@
 {
+  "author": "Alex Hall",
   "name": "code-challenges",
+  "license": "ISC",
   "version": "1.0.0",
   "description": "Solutions to various code challenges that I've worked on and found interesting.",
   "main": "index.js",
@@ -8,14 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aroxx/code-challenges.git"
+    "url": "https://github.com/alexpeterhall/code-challenges.git"
   },
-  "author": "Alex Hall",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aroxx/code-challenges/issues"
+    "url": "https://github.com/alexpeterhall/code-challenges/issues"
   },
-  "homepage": "https://github.com/aroxx/code-challenges#readme",
+  "homepage": "https://github.com/alexpeterhall/code-challenges#readme",
   "dependencies": {
     "jest": "^26.6.3"
   },
